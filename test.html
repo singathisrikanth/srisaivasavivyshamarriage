@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Sai Vasavi Vysha Marriage Bureau</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+/* BODY */
+body{
+  background:#fff;
+  color:#333;
+  padding-top:72px; /* fixed navbar offset */
+}
+
+/* NAVBAR */
+.navbar{
+  background:linear-gradient(135deg,#8e0038,#e91e63);
+}
+.navbar-brand{
+  font-weight:700;
+}
+.navbar-brand small{
+  display:block;
+  font-size:13px;
+  font-weight:400;
+}
+
+/* NAV LINKS */
+.nav-link{
+  font-weight:500;
+  position:relative;
+  color:#fff!important;
+  transition:color .3s;
+}
+
+/* Hover underline */
+.nav-link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#ffc107;
+  transition:.3s;
+}
+.nav-link:hover::after{
+  width:100%;
+}
+.nav-link:hover{
+  color:#ffc107!important;
+}
+
+/* ACTIVE NAV */
+.nav-link.active{
+  color:#ffc107!important;
+}
+.nav-link.active::after{
+  width:100%;
+}
+
+/* HERO */
+#home{
+  min-height:100vh;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("./marriage.jpg") center top / cover no-repeat;
+}
+
+.hero-content{
+  color:#fff;
+  max-width:720px;
+}
+
+.hero-content h1{
+  font-size:clamp(30px,4vw,48px);
+  font-weight:700;
+  margin-bottom:15px;
+}
+
+.hero-content p{
+  font-size:clamp(16px,2vw,20px);
+  margin-bottom:10px;
+  opacity:.95;
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h2{
+  text-align:center;
+  color:#8e0038;
+  margin-bottom:40px;
+  font-size:32px;
+}
+
+/* CARDS */
+.card-custom{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  text-align:center;
+  transition:transform .3s, box-shadow .3s;
+}
+.card-custom:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+.card-custom h3{
+  color:#e91e63;
+  margin-bottom:10px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+/* CONTACT */
+.contact-box{
+  background:#fff;
+  padding:40px;
+  border-radius:25px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+form{
+  display:grid;
+  gap:15px;
+  margin-top:20px;
+}
+
+input,select,textarea{
+  padding:14px;
+  border-radius:12px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+input:focus,select:focus,textarea:focus{
+  border-color:#e91e63;
+  outline:none;
+  box-shadow:0 0 0 3px rgba(233,30,99,.2);
+}
+
+button.submit-btn{
+  background:linear-gradient(135deg,#e91e63,#8e0038);
+  color:#fff;
+  border:none;
+  padding:15px;
+  border-radius:30px;
+  font-size:18px;
+  font-weight:600;
+}
+
+/* LANGUAGE BUTTON */
+.lang-btn.active{
+  background:#ffc107!important;
+  color:#000!important;
+  border-color:#ffc107!important;
+}
+
+/* FOOTER */
+footer{
+  background:#222;
+  color:#fff;
+  text-align:center;
+  padding:20px;
+}
+
+/* CONTACT SPLIT LAYOUT */
+.contact-wrapper{
+  display:grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap:40px;
+  max-width:1100px;
+  margin:auto;
+  background:#fff;
+  padding:50px;
+  border-radius:30px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+/* LEFT SIDE */
+.contact-left{
+  text-align:left;
+}
+
+.contact-left h3{
+  color:#8e0038;
+  margin-bottom:20px;
+}
+
+.founder-name{
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.founder-role{
+  color:#777;
+  margin-bottom:20px;
+}
+
+/* DIVIDER */
+.contact-divider{
+  width:1px;
+  background:linear-gradient(to bottom, transparent, #e91e63, transparent);
+}
+
+/* RIGHT SIDE */
+.contact-right h3{
+  color:#8e0038;
+  margin-bottom:20px;
+}
+
+/* MOBILE STACK */
+@media(max-width:768px){
+  .contact-wrapper{
+    grid-template-columns:1fr;
+    padding:30px;
+  }
+
+  .contact-divider{
+    width:100%;
+    height:1px;
+    margin:30px 0;
+    background:linear-gradient(to right, transparent, #e91e63, transparent);
+  }
+}
+
+
+/* MOBILE */
+@media(max-width:768px){
+  body{ padding-top:96px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">
+      🌸 Sri Sai Vasavi Vysha
+      <small data-en="Marriage Bureau" data-te="వివాహ కేంద్రం"></small>
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-lg-3">
+          <button id="btn-en" onclick="setLang('en')" class="btn btn-outline-light btn-sm rounded-pill lang-btn">English</button>
+          <button id="btn-te" onclick="setLang('te')" class="btn btn-outline-light btn-sm rounded-pill lang-btn">తెలుగు</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <h1 data-en="Perfect Telugu Matches" data-te="సరిగ్గా సరిపోయే తెలుగు జతలు"></h1>
+    <p data-en="For Telangana Families Only" data-te="తెలంగాణ కుటుంబాల కోసం"></p>
+    <p style="font-weight:600">🛕 Warangal | Telangana</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card-custom"><h3>Bride Profiles</h3></div>
+    <div class="card-custom"><h3>Groom Profiles</h3></div>
+    <div class="card-custom"><h3>Horoscope Matching</h3></div>
+    <div class="card-custom"><h3>Personal Assistance</h3></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Us</h2>
+
+  <div class="card-custom" style="max-width:900px;margin:auto;">
+    <p>
+      Sri Sai Vasavi Vysha Marriage Bureau is a trusted matrimonial service
+      dedicated to helping Telugu families find the right life partner.
+      Based in Warangal, Telangana, we specialize in traditional and
+      value-based matchmaking.
+    </p>
+
+    <p>
+      We believe marriage is not just about profiles, but about compatibility,
+      family values, and long-term happiness. Every profile is personally
+      verified and matches are suggested based on education, profession,
+      horoscope, lifestyle, and family background.
+    </p>
+
+    <p>
+      Our mission is to provide a transparent, respectful, and reliable
+      matchmaking experience that leads to happy and successful marriages.
+    </p>
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="contact-wrapper">
+
+    <!-- LEFT : FOUNDER DETAILS -->
+    <div class="contact-left">
+      <h3>Founder</h3>
+
+      <p class="founder-name">VELLANKI LAXMAN</p>
+      <p class="founder-role">Founder</p>
+
+      <p>📞 <strong>+91 98496 96766</strong></p>
+      <p>📍 Warangal, Telangana</p>
+      <p>🕉️ Trusted Telugu Matrimony Services</p>
+    </div>
+
+    <!-- DIVIDER -->
+    <div class="contact-divider"></div>
+
+    <!-- RIGHT : CONTACT FORM -->
+    <div class="contact-right">
+      <h3>Send Enquiry</h3>
+
+      <form onsubmit="sendWhatsApp(event)">
+        <input id="name" placeholder="Your Name" required>
+        <input id="phone" placeholder="Mobile Number" required>
+        <select id="looking">
+          <option>Looking for Bride</option>
+          <option>Looking for Groom</option>
+        </select>
+        <textarea id="msg" placeholder="Your Message"></textarea>
+
+        <button class="submit-btn">Send via WhatsApp</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+<footer>
+  © 2025 Sri Sai Vasavi Vysha Marriage Bureau
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+/* ACTIVE NAV HIGHLIGHT */
+document.querySelectorAll('.nav-link').forEach(link=>{
+  link.addEventListener('click',function(){
+    document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+
+/* LANGUAGE SWITCH */
+function setLang(lang){
+  document.querySelectorAll('[data-en]').forEach(el=>{
+    el.innerText = el.getAttribute('data-'+lang);
+  });
+  btnEn.classList.remove('active');
+  btnTe.classList.remove('active');
+  (lang==='en'?btnEn:btnTe).classList.add('active');
+}
+
+/* WHATSAPP */
+function sendWhatsApp(e){
+  e.preventDefault();
+  let text=`Name: ${name.value}%0APhone: ${phone.value}%0A${looking.value}%0A${msg.value}`;
+  window.open(`https://wa.me/919849696766?text=${text}`,'_blank');
+}
+
+const btnEn=document.getElementById('btn-en');
+const btnTe=document.getElementById('btn-te');
+setLang('en');
+</script>
+
+</body>
+</html>
