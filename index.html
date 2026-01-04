@@ -228,25 +228,49 @@
 
       <!-- RIGHT : CONTACT FORM -->
       <div class="contact-right">
-        <h3>Send Enquiry</h3>
+        <h3 data-en="Send Enquiry" data-te="వివరాలు పంపండి">Send Enquiry</h3>
 
         <form onsubmit="sendWhatsApp(event)">
-          <input id="name" type="text" placeholder="Your Name" required>
-          <input id="phone" type="tel" placeholder="Mobile Number" required>
-
+          <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+            data-en-placeholder="Your Name"
+            data-te-placeholder="మీ పేరు"
+            required
+          >
+          <small id="nameError" class="error-msg"></small>
+          <input
+            id="phone"
+            type="tel"
+            placeholder="Mobile Number"
+            data-en-placeholder="Mobile Number"
+            data-te-placeholder="మొబైల్ నంబర్"
+            required
+            maxlength="10"
+            inputmode="numeric"
+          >
+          <small id="phoneError" class="error-msg"></small>
           <select id="looking">
-            <option>Looking for Bride</option>
-            <option>Looking for Groom</option>
+            <option data-en="Looking for Bride" data-te="వధువు కోసం చూస్తున్నారు">
+              Looking for Bride
+            </option>
+            <option data-en="Looking for Groom" data-te="వరుడు కోసం చూస్తున్నారు">
+              Looking for Groom
+            </option>
           </select>
 
-          <textarea id="msg" placeholder="Your Message"></textarea>
+          <textarea id="msg"
+            placeholder="Your Message"
+            data-en-placeholder="Your Message"
+            data-te-placeholder="మీ సందేశం">
+          </textarea>
 
           <button type="submit" class="submit-btn">
-                  SEND EMAIL
+            SEND WHATSAPP
           </button>
         </form>
       </div>
-
     </div>
 
   </div>
