@@ -71,7 +71,7 @@ function sendWhatsApp(event){
 
   if(!valid) return;
 
-  const whatsappNumber = "917799127300";
+  const whatsappNumber = "919849696766";
 
   const text =
 `Sri Sai Vasavi Vysha Marriage Matrimony
@@ -91,3 +91,4 @@ Message: ${message || "N/A"}`;
     "_blank"
   );
 }
+
