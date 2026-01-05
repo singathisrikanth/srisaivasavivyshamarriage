@@ -74,7 +74,8 @@ function sendWhatsApp(event){
   const whatsappNumber = "917799127300";
 
   const text =
-`Sri Vellanki Laxman
+`Sri Sai Vasavi Vysha Marriage Matrimony
+Sri Vellanki Laxman
 Founder & Matchmaker
 
 📍 Warangal, Telangana
